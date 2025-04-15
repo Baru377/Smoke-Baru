@@ -1,138 +1,110 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmokeRP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmokeRP - Innowacyjny Serwer FiveM</title>
   <style>
-    body {
+    * {
       margin: 0;
-      background-color: #0a0a0a;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
       color: white;
-      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url('tło.png') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(30%) blur(4px);
     }
     header {
-      background-color: #000;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #00ff00;
-    }
-    nav a {
-      color: #00ff00;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-shadow: 0 0 10px #00ff00;
-    }
-    .logo {
       text-align: center;
-      margin: 3rem 0;
+      padding: 20px;
     }
-    .logo img {
-      width: 400px;
-      transition: transform 0.5s ease;
-    }
-    .logo img:hover {
-      transform: scale(1.1) rotate(1deg);
+    header img {
+      height: 100px;
     }
     .clock {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: #000;
-      padding: 10px;
-      border: 2px solid #00ff00;
+      position: absolute;
+      top: 20px;
+      right: 30px;
       font-size: 1.2rem;
+      color: #0f0;
     }
-    .content {
-      padding: 2rem;
-    }
-    .owners, .rules, .shop {
-      margin-top: 2rem;
-    }
-    .owners h2, .rules h2, .shop h2 {
-      color: #00ff00;
-      font-size: 2rem;
-    }
-    .owners p {
-      font-size: 1.5rem;
-    }
-    .shop-item {
-      margin: 1rem 0;
+    .main-content {
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 80vh;
+      padding: 0 20px;
     }
-    .shop-item img {
-      width: 32px;
-      margin-right: 1rem;
+    .main-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ff88;
+      text-shadow: 0 0 10px #000;
+    }
+    .main-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      color: #eee;
+      text-shadow: 0 0 5px #000;
+    }
+    .discord-link {
+      position: absolute;
+      bottom: 30px;
+      background-color: #5865F2;
+      padding: 12px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .discord-link:hover {
+      background-color: #4752c4;
     }
   </style>
 </head>
 <body>
+  <div class="background"></div>
+
   <div class="clock" id="clock"></div>
 
   <header>
-    <div class="nav">
-      <nav>
-        <a href="#">Strona główna</a>
-        <a href="https://discord.gg/mVBtP7rv" target="_blank">Discord</a>
-        <a href="#shop">Sklep</a>
-        <a href="#owners">Właściciele</a>
-        <a href="#rules">Regulamin</a>
-      </nav>
-    </div>
+    <img src="logo.png" alt="SmokeRP Logo">
   </header>
 
-  <main>
-    <div class="logo">
-      <img src="https://media.discordapp.net/attachments/942623919117062204/1101243419428393071/smokerp_png.png" alt="SmokeRP Logo">
-    </div>
+  <div class="main-content">
+    <h1>Witamy na SmokeRP</h1>
+    <p>
+      SmokeRP to innowacyjny serwer FiveM, który wynosi rozgrywkę na zupełnie nowy poziom. <br>
+      Szukamy ambitnych graczy do naszych frakcji takich jak LSPD, EMS, organizacje przestępcze i wiele więcej!<br>
+      Dołącz do społeczności, gdzie każdy ma szansę na wielką historię. <br>
+      Nowoczesne UI, aktywna administracja i ciągły rozwój serwera – tego doświadczysz na SmokeRP.
+    </p>
+  </div>
 
-    <div class="content">
-      <section class="shop" id="shop">
-        <h2>🛒 Sklep</h2>
-        <div class="shop-item">
-          <img src="https://img.icons8.com/ios-filled/50/00ff00/unlock.png" alt="Unban">
-          <span>Unban – 20zł</span>
-        </div>
-        <div class="shop-item">
-          <img src="https://img.icons8.com/ios-filled/50/00ff00/license-plate.png" alt="Tablica">
-          <span>Tablica custom – 10zł</span>
-        </div>
-      </section>
-
-      <section class="owners" id="owners">
-        <h2>👑 Właściciele</h2>
-        <p><strong>"BARU"</strong> – <span style="color:#00ff00">MAIN OWNER</span></p>
-        <p><strong>"Kalusiak"</strong> – <span style="color:#00ff00">CEO</span></p>
-      </section>
-
-      <section class="rules" id="rules">
-        <h2>📜 Regulamin</h2>
-        <ul>
-          <li>🔞 Zakaz używania cheatów/skryptów dających przewagę.</li>
-          <li>🎤 Szanuj innych graczy – brak wyzwisk i toksyczności.</li>
-          <li>💬 Roleplay ma być na poziomie – nie trollujemy.</li>
-          <li>🚗 Nie jeździmy pojazdami jak idioci – dbaj o realizm.</li>
-          <li>📛 Administrator ma zawsze ostatnie słowo.</li>
-          <li>🚫 Zakaz reklamowania innych serwerów.</li>
-          <li>📢 Discord to obowiązek – info o eventach tylko tam.</li>
-        </ul>
-      </section>
-    </div>
-  </main>
+  <a class="discord-link" href="https://discord.gg/hayRrSEY" target="_blank">Dołącz na Discord</a>
 
   <script>
     function updateClock() {
       const now = new Date();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
       document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
     }
     setInterval(updateClock, 1000);
